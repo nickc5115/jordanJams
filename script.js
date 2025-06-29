@@ -299,11 +299,11 @@ style.textContent = `
         }
         
         .hamburger.active span:nth-child(1) {
-            transform: translateY(8px) rotate(45deg);
+            transform: translateY(9px) rotate(45deg);
         }
         
         .hamburger.active span:nth-child(3) {
-            transform: translateY(-8px) rotate(-45deg);
+            transform: translateY(-9px) rotate(-45deg);
         }
     }
     
