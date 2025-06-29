@@ -27,8 +27,9 @@ body {
     color: var(--text-dark);
     overflow-x: hidden;
     position: relative;
-    background: url('jrdai.png') no-repeat center center fixed;
-    background-size: cover;
+    background: url('jrdai.png') no-repeat top center fixed;
+    background-size: 100% auto;
+    background-color: #fff;
 }
 
 .container {
@@ -794,6 +795,16 @@ h1, h2, h3, h4, h5, h6 {
     
     .gallery-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-attachment: scroll;
+        background-color: #fff;
     }
 }
 
