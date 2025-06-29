@@ -818,6 +818,28 @@ h1, h2, h3, h4, h5, h6 {
         background-attachment: scroll !important;
         background-color: #fff !important;
     }
+    .hero::before {
+        content: none;
+    }
+    .hero-content {
+        margin-top: 20rem !important;
+        margin-bottom: 1rem;
+        background: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(8px);
+        border-radius: 18px;
+        box-shadow: 0 4px 24px rgba(44, 62, 80, 0.10);
+        padding: 2rem 1.2rem;
+        margin: 0 auto;
+        z-index: 2;
+        position: relative;
+        color: #2C3E50;
+        text-shadow: none;
+        max-width: 95vw;
+    }
+    .hero-title, .hero-subtitle, .hero-description {
+        color: #2C3E50;
+        text-shadow: none;
+    }
 }
 
 @media (min-width: 901px) {
