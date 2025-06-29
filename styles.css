@@ -812,11 +812,12 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 900px) {
     body {
+        border: 5px solid red !important;
+        background-color: yellow !important;
         background-size: 100% auto !important;
         background-repeat: no-repeat !important;
         background-position: center 60px !important;
         background-attachment: scroll !important;
-        background-color: #fff !important;
     }
 }
 
