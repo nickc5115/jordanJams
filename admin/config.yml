@@ -4,6 +4,7 @@ backend:
   branch: main
   base_url: https://jordanjams-cms-oauth.onrender.com
   auth_endpoint: /auth
+  origins: https://jordanjams.com,https://www.jordanjams.com,https://jordanjams.pages.dev
 
 media_folder: "assets/images"
 public_folder: "/assets/images"
