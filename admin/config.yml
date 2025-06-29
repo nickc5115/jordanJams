@@ -6,6 +6,7 @@ backend:
   auth_endpoint: /auth
   origins: https://jordanjams.com,https://www.jordanjams.com,https://jordanjams.pages.dev
 
+
 media_folder: "assets/images"
 public_folder: "/assets/images"
 
