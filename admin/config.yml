@@ -1,0 +1,21 @@
+backend:
+  name: github
+  repo: nickcarfagno/jordanJams
+  branch: main
+  site_domain: jordanJams
+
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+collections:
+  - name: "events"
+    label: "Events"
+    folder: "events"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Location", name: "location", widget: "string" }
+      - { label: "Description", name: "body", widget: "markdown" }
+      - { label: "Link (optional)", name: "link", widget: "string", required: false } 
