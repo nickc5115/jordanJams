@@ -1,0 +1,76 @@
+<div style="font-family: system-ui, sans-serif, Arial; font-size: 12px">
+  <div style="background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%); color: white; padding: 20px; border-radius: 10px 10px 0 0; text-align: center;">
+    <h1 style="margin: 0; font-size: 24px;">🎵 New Booking Request - Jordan Jams</h1>
+    <p style="margin: 10px 0 0 0; opacity: 0.9;">A new booking inquiry has been received!</p>
+  </div>
+  
+  <div style="background: #f8f9fa; padding: 20px; border-radius: 0 0 10px 10px;">
+    <div style="margin-bottom: 20px;">
+      <h2 style="color: #2c3e50; margin: 0 0 15px 0; font-size: 18px;">📋 Contact Information</h2>
+      <table style="width: 100%; border-collapse: collapse;">
+        <tr>
+          <td style="padding: 8px 0; border-bottom: 1px solid #e1e8ed; font-weight: bold; color: #2c3e50; width: 120px;">Name:</td>
+          <td style="padding: 8px 0; border-bottom: 1px solid #e1e8ed; color: #2c3e50;">{{from_name}}</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px 0; border-bottom: 1px solid #e1e8ed; font-weight: bold; color: #2c3e50;">Email:</td>
+          <td style="padding: 8px 0; border-bottom: 1px solid #e1e8ed; color: #2c3e50;">
+            <a href="mailto:{{from_email}}" style="color: #FF6B6B; text-decoration: none;">{{from_email}}</a>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding: 8px 0; border-bottom: 1px solid #e1e8ed; font-weight: bold; color: #2c3e50;">Phone:</td>
+          <td style="padding: 8px 0; border-bottom: 1px solid #e1e8ed; color: #2c3e50;">{{phone}}</td>
+        </tr>
+      </table>
+    </div>
+
+    <div style="margin-bottom: 20px;">
+      <h2 style="color: #2c3e50; margin: 0 0 15px 0; font-size: 18px;">🎉 Event Details</h2>
+      <table style="width: 100%; border-collapse: collapse;">
+        <tr>
+          <td style="padding: 8px 0; border-bottom: 1px solid #e1e8ed; font-weight: bold; color: #2c3e50; width: 120px;">Event Type:</td>
+          <td style="padding: 8px 0; border-bottom: 1px solid #e1e8ed; color: #2c3e50;">
+            <span style="background: #FF6B6B; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px; text-transform: uppercase;">{{event_type}}</span>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding: 8px 0; border-bottom: 1px solid #e1e8ed; font-weight: bold; color: #2c3e50;">Preferred Date:</td>
+          <td style="padding: 8px 0; border-bottom: 1px solid #e1e8ed; color: #2c3e50;">
+            <span style="background: #4ECDC4; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px;">{{preferred_date}}</span>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div style="margin-bottom: 20px;">
+      <h2 style="color: #2c3e50; margin: 0 0 15px 0; font-size: 18px;">💬 Message</h2>
+      <div
+        style="
+          padding: 15px;
+          border: 1px solid #e1e8ed;
+          border-radius: 8px;
+          background: white;
+          color: #2c3e50;
+          font-size: 14px;
+          line-height: 1.6;
+        "
+      >
+        {{message}}
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 2px solid #e1e8ed;">
+      <p style="color: #7F8C8D; font-size: 12px; margin: 0;">
+        This inquiry was sent from the Jordan Jams website contact form.<br>
+        Please respond to {{from_email}} to follow up on this booking request.
+      </p>
+      <div style="margin-top: 15px;">
+        <a href="mailto:{{from_email}}?subject=Re: Jordan Jams Booking Request - {{event_type}}" 
+           style="background: #FF6B6B; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; display: inline-block;">
+          📧 Reply to {{from_name}}
+        </a>
+      </div>
+    </div>
+  </div>
+</div> 

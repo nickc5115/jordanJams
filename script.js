@@ -45,11 +45,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Contact form handling
-    const contactForm = document.querySelector('.contact-form');
+    // Contact form handling with EmailJS
+    const contactForm = document.querySelector('#contact-form');
     if (contactForm) {
+        // Initialize EmailJS with actual Public Key
+        emailjs.init("c6AFKrDYTfY6aEKFS");
+        
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
+            
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
             
             // Get form data
             const formData = new FormData(this);
@@ -58,6 +67,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // Basic validation
             if (!data.name || !data.email || !data['event-type'] || !data.date) {
                 showNotification('Please fill in all required fields.', 'error');
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
                 return;
             }
             
@@ -65,12 +76,51 @@ document.addEventListener('DOMContentLoaded', function() {
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(data.email)) {
                 showNotification('Please enter a valid email address.', 'error');
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
                 return;
             }
             
-            // Simulate form submission
-            showNotification('Thank you! Your message has been sent. Jordan will get back to you soon!', 'success');
-            this.reset();
+            // Prepare email template parameters
+            const templateParams = {
+                from_name: data.name,
+                from_email: data.email,
+                phone: data.phone || 'Not provided',
+                event_type: data['event-type'],
+                preferred_date: data.date,
+                message: data.message || 'No additional message provided'
+            };
+            
+            console.log('Sending email with parameters:', templateParams);
+            
+            // Send email using EmailJS with actual credentials
+            emailjs.send('service_4mrsonb', 'template_y4x4s9e', templateParams)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    showNotification('Thank you! Your message has been sent. Jordan will get back to you soon!', 'success');
+                    contactForm.reset();
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    console.log('Error details:', {
+                        status: error.status,
+                        text: error.text,
+                        response: error.response
+                    });
+                    
+                    let errorMessage = 'Sorry, there was an error sending your message. ';
+                    if (error.status === 400) {
+                        errorMessage += 'This might be due to a template configuration issue. Please contact Jordan directly.';
+                    } else {
+                        errorMessage += 'Please try again or contact Jordan directly.';
+                    }
+                    
+                    showNotification(errorMessage, 'error');
+                })
+                .finally(function() {
+                    // Reset button state
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                });
         });
     }
     

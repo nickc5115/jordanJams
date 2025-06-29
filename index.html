@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fredoka+One:wght@400&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header class="header">
@@ -23,6 +25,11 @@
                     <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/jordanjams17/" target="_blank" rel="noopener noreferrer" aria-label="Follow Jordan Jams on Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
                 <div class="hamburger">
                     <span></span>
                     <span></span>
@@ -41,6 +48,13 @@
                 <div class="hero-buttons">
                     <a href="#contact" class="btn btn-primary">Book Jordan</a>
                     <a href="#about" class="btn btn-secondary">Learn More</a>
+                </div>
+                <div class="hero-social">
+                    <p>Follow Jordan's musical journey:</p>
+                    <a href="https://www.instagram.com/jordanjams17/" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                        <span>@jordanjams17</span>
+                    </a>
                 </div>
             </div>
             <div class="hero-image">
@@ -113,31 +127,60 @@
         <section id="gallery" class="gallery">
             <div class="container">
                 <h2 class="section-title">Gallery</h2>
+                <p class="gallery-intro">Check out some of Jordan's recent performances and musical moments!</p>
                 <div class="gallery-grid">
                     <div class="gallery-item">
-                        <div class="gallery-placeholder">
-                            <span>📸</span>
-                            <p>Performance at Local Library</p>
+                        <img src="assets/images/jordan-performance-1.jpg" alt="Jordan performing for children" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">
+                                <h3>Library Performance</h3>
+                                <p>Bringing music to young readers</p>
+                            </div>
                         </div>
                     </div>
                     <div class="gallery-item">
-                        <div class="gallery-placeholder">
-                            <span>📸</span>
-                            <p>Park Concert</p>
+                        <img src="assets/images/jordan-performance-2.jpg" alt="Jordan with musical instruments" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">
+                                <h3>Musical Fun</h3>
+                                <p>Interactive instruments and songs</p>
+                            </div>
                         </div>
                     </div>
                     <div class="gallery-item">
-                        <div class="gallery-placeholder">
-                            <span>📸</span>
-                            <p>School Assembly</p>
+                        <img src="assets/images/jordan-performance-3.jpg" alt="Jordan entertaining children" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">
+                                <h3>Engaged Audience</h3>
+                                <p>Children loving the music</p>
+                            </div>
                         </div>
                     </div>
                     <div class="gallery-item">
-                        <div class="gallery-placeholder">
-                            <span>📸</span>
-                            <p>Birthday Party</p>
+                        <img src="assets/images/jordan-performance-4.jpg" alt="Jordan's musical performance" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">
+                                <h3>Performance Magic</h3>
+                                <p>Creating musical memories</p>
+                            </div>
                         </div>
                     </div>
+                    <div class="gallery-item">
+                        <img src="assets/images/jordan-performance-5.jpg" alt="Jordan and children enjoying music" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">
+                                <h3>Joyful Moments</h3>
+                                <p>Music brings smiles</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-cta">
+                    <p>See more photos and videos on Instagram!</p>
+                    <a href="https://www.instagram.com/jordanjams17/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        <i class="fab fa-instagram"></i>
+                        Follow @jordanjams17
+                    </a>
                 </div>
             </div>
         </section>
@@ -162,9 +205,13 @@
                                 <span class="contact-icon">📍</span>
                                 <span>Serving the Greater Area</span>
                             </div>
+                            <div class="contact-item">
+                                <span class="contact-icon"><i class="fab fa-instagram"></i></span>
+                                <a href="https://www.instagram.com/jordanjams17/" target="_blank" rel="noopener noreferrer">@jordanjams17</a>
+                            </div>
                         </div>
                     </div>
-                    <form class="contact-form">
+                    <form class="contact-form" id="contact-form">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" required>
@@ -209,6 +256,11 @@
                 <div class="footer-section">
                     <h3>🎵 Jordan Jams</h3>
                     <p>Bringing music and joy to children everywhere</p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/jordanjams17/" target="_blank" rel="noopener noreferrer" aria-label="Follow Jordan Jams on Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
@@ -223,6 +275,7 @@
                     <h4>Contact</h4>
                     <p>jordan@jordanjams.com</p>
                     <p>(555) 123-4567</p>
+                    <p><a href="https://www.instagram.com/jordanjams17/" target="_blank" rel="noopener noreferrer">@jordanjams17</a></p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -231,6 +284,8 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=1.2"></script>
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </body>
 </html> 
