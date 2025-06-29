@@ -802,7 +802,7 @@ h1, h2, h3, h4, h5, h6 {
     body {
         background-size: 100% auto;
         background-repeat: no-repeat;
-        background-position: top center;
+        background-position: center 60px;
         background-attachment: scroll;
         background-color: #fff;
     }
