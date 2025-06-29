@@ -88,7 +88,7 @@ jordanJams/
 
 ## 📞 Contact Information
 
-- **Email**: jordan@jordanjams.com
+- **Email**: jordanjams17@gmail.com
 - **Phone**: (555) 123-4567
 - **Service Area**: Greater Area
 
