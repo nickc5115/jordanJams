@@ -2,7 +2,8 @@ backend:
   name: github
   repo: nickcarfagno/jordanJams
   branch: main
-  site_domain: jordanJams
+  base_url: https://jordanjams-cms-oauth.onrender.com
+  auth_endpoint: /auth
 
 media_folder: "assets/images"
 public_folder: "/assets/images"
