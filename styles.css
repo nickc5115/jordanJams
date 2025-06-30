@@ -965,4 +965,11 @@ html {
   background: none !important;
   box-shadow: none !important;
   border-radius: 0 !important;
+}
+
+@media (max-width: 600px) {
+  .instagram-img-icon {
+    width: 28px;
+    height: 28px;
+  }
 } 
