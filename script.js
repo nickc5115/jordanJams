@@ -162,15 +162,27 @@ document.addEventListener('DOMContentLoaded', function() {
                 eventsList.innerHTML = '<p>No upcoming events at this time.</p>';
                 return;
             }
-            eventsList.innerHTML = events.map(event => `
+            eventsList.innerHTML = events.map(event => {
+                let dateStr = '';
+                let timeStr = '';
+                if (event.date) {
+                    // Remove the trailing 'Z' and treat as if it's Eastern Time
+                    const easternDateStr = event.date.replace(/Z$/, '');
+                    // Parse as if it's local to America/New_York
+                    const dateObj = new Date(easternDateStr + '-04:00'); // -04:00 for EDT, -05:00 for EST (could be improved for DST)
+                    dateStr = dateObj.toLocaleDateString('en-US', { timeZone: 'America/New_York' });
+                    timeStr = dateObj.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', timeZone: 'America/New_York' });
+                }
+                return `
                 <div class="event-card">
                     <h3>${event.title}</h3>
-                    <p><strong>Date:</strong> ${event.date ? new Date(event.date).toLocaleDateString() : ''}</p>
+                    <p><strong>Date:</strong> ${dateStr}${timeStr ? ' &bull; ' + timeStr + ' EST' : ''}</p>
                     <p><strong>Location:</strong> ${event.location}</p>
                     <p>${event.description}</p>
                     ${event.link ? `<p><a href="${event.link}" target="_blank" rel="noopener">More Info</a></p>` : ''}
                 </div>
-            `).join('');
+            `;
+            }).join('');
         })
         .catch(err => {
             const eventsList = document.getElementById('events-list');
