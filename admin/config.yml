@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: nickcarfagno/jordanJams
+  repo: nickc5115/jordanJams
   branch: main
   base_url: https://jordanjams-cms-oauth.onrender.com
   auth_endpoint: /auth
