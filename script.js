@@ -156,6 +156,8 @@ document.addEventListener('DOMContentLoaded', function() {
     fetch('events.json')
         .then(response => response.json())
         .then(events => {
+            // Sort events by date/time ascending
+            events.sort((a, b) => new Date(a.date) - new Date(b.date));
             const eventsList = document.getElementById('events-list');
             if (!eventsList) return;
             if (events.length === 0) {
