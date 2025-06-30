@@ -152,6 +152,33 @@ document.addEventListener('DOMContentLoaded', function() {
     notes.forEach((note, index) => {
         note.style.animationDelay = `${index * 0.5}s`;
     });
+
+    fetch('events.json')
+        .then(response => response.json())
+        .then(events => {
+            const eventsList = document.getElementById('events-list');
+            if (!eventsList) return;
+            if (events.length === 0) {
+                eventsList.innerHTML = '<p>No upcoming events at this time.</p>';
+                return;
+            }
+            eventsList.innerHTML = events.map(event => `
+                <div class="event-card">
+                    <h3>${event.title}</h3>
+                    <p><strong>Date:</strong> ${event.date ? new Date(event.date).toLocaleDateString() : ''}</p>
+                    <p><strong>Location:</strong> ${event.location}</p>
+                    <p>${event.description}</p>
+                    ${event.link ? `<p><a href="${event.link}" target="_blank" rel="noopener">More Info</a></p>` : ''}
+                </div>
+            `).join('');
+        })
+        .catch(err => {
+            const eventsList = document.getElementById('events-list');
+            if (eventsList) {
+                eventsList.innerHTML = '<p>Unable to load events at this time.</p>';
+            }
+            console.error('Error loading events:', err);
+        });
 });
 
 // Notification system
