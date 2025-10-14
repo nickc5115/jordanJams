@@ -1,6 +1,6 @@
 ---
 title: Friendship Circle
-date: 2025-11-02T07:00:00.000Z
+date: 2025-11-02T11:00:00.000Z
 location: 100 N State St, Newtown, PA 18940
 ---
 At Friendship Circle, we believe in the power of community. Our programs, activities, and events bring together individuals with disabilities, their families, volunteers, and staff to form a continuous circle of friendship!
