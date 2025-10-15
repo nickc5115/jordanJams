@@ -168,17 +168,24 @@ document.addEventListener('DOMContentLoaded', function() {
                 let dateStr = '';
                 let timeStr = '';
                 if (event.date) {
-                    // Remove the trailing 'Z' and treat as if it's Eastern Time
-                    const easternDateStr = event.date.replace(/Z$/, '');
-                    // Parse as if it's local to America/New_York
-                    const dateObj = new Date(easternDateStr + '-04:00'); // -04:00 for EDT, -05:00 for EST (could be improved for DST)
-                    dateStr = dateObj.toLocaleDateString('en-US', { timeZone: 'America/New_York' });
-                    timeStr = dateObj.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', timeZone: 'America/New_York' });
+                    // Parse the ISO string components (treat as wall time, ignore Z/UTC)
+                    const m = String(event.date).match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/);
+                    if (m) {
+                        const y = parseInt(m[1], 10);
+                        const mo = parseInt(m[2], 10) - 1; // 0-based
+                        const d = parseInt(m[3], 10);
+                        const h = parseInt(m[4], 10);
+                        const mi = parseInt(m[5], 10);
+                        // Build a UTC date from the components and format in UTC to avoid TZ shifts
+                        const wall = new Date(Date.UTC(y, mo, d, h, mi));
+                        dateStr = wall.toLocaleDateString('en-US', { timeZone: 'UTC' });
+                        timeStr = wall.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true, timeZone: 'UTC' });
+                    }
                 }
                 return `
                 <div class="event-card">
                     <h3>${event.title}</h3>
-                    <p><strong>Date:</strong> ${dateStr}${timeStr ? ' &bull; ' + timeStr + ' EST' : ''}</p>
+                    <p><strong>Date:</strong> ${dateStr}${timeStr ? ' &bull; ' + timeStr + ' ET' : ''}</p>
                     <p><strong>Location:</strong> ${event.location}</p>
                     <p>${event.description}</p>
                     ${event.link ? `<p><a href="${event.link}" target="_blank" rel="noopener">More Info</a></p>` : ''}
