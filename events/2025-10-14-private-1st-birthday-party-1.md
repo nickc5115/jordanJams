@@ -1,6 +1,6 @@
 ---
-title: Private 1st Birthday Party
-date: 2025-11-15T16:00:00.000Z
-location: Hatfield
+title: Private - 1st Birthday Party
+date: 2026-02-08T14:00:00.000Z
+location: Perkasie, PA
 ---
 Book me for your next party!
