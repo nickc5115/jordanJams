@@ -1,8 +1,6 @@
 ---
-title: Friendship Circle
-date: 2025-12-06T11:00:00.000Z
-location: 100 N State St, Newtown, PA 18940
+title: Private Event - 1st Birthday Party
+date: 2026-01-24T12:30:00.000Z
+location: Warrington, PA
 ---
-At Friendship Circle, we believe in the power of community. Our programs, activities, and events bring together individuals with disabilities, their families, volunteers, and staff to form a continuous circle of friendship!
-
-Everyone is welcome! Open to families and individuals of all ages & affiliations.
+Book me for your next event!
