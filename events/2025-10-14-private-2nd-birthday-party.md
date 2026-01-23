@@ -1,6 +1,8 @@
 ---
-title: Private 2nd Birthday Party
-date: 2025-11-28T15:30:00.000Z
-location: Perkasie
+title: Friendship Circle
+date: 2026-04-12T11:00:00.000Z
+location: 100 N State Street, Newtown, PA 18940
 ---
-Book me for your next party!
+At Friendship Circle, we believe in the power of community. Our programs, activities, and events bring together individuals with disabilities, their families, volunteers, and staff to form a continuous circle of friendship!
+
+Everyone is welcome! Open to families and individuals of all ages & affiliations.
